@@ -1,0 +1,34 @@
+name: Run Tests and lint on Pull Request and Push
+
+on:
+  push:
+    branches-ignore:
+      - master
+      - gh-pages
+  pull_request:
+    branches-ignore:
+      - master
+      - gh-pages
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js 16
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Lint
+      run: npm run lint
+    
+    - name: Test
+      run: npm run test
