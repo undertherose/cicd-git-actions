@@ -2,7 +2,7 @@ name: Deployment to Github Page on Main Branch
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
