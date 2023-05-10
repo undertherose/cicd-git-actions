@@ -3,11 +3,11 @@ name: Run Tests and lint on Pull Request and Push
 on:
   push:
     branches-ignore:
-      - master
+      - main
       - gh-pages
   pull_request:
     branches-ignore:
-      - master
+      - main
       - gh-pages
 
 jobs:
